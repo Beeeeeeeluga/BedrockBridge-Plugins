@@ -1,5 +1,3 @@
-# BedrockBridge-Plugins
-
 # BedrockBridge Plugins Collection 🎮
 
 Welcome to my custom BedrockBridge plugins repository!
