@@ -1,0 +1,187 @@
+================================================================================
+                  WEBHOOK PLUGIN v4.1.1 - DEPLOYMENT GUIDE
+================================================================================
+
+✅ STATUS: Production Ready
+
+This version fixes all known issues with entity tracking and rate limiting.
+
+================================================================================
+WHAT'S FIXED
+================================================================================
+
+1. Entity Death Tracking Errors
+   ❌ BEFORE: "Failed to get property 'location' due to Entity being invalid"
+   ✅ AFTER: Safe handling with fallback values
+
+2. Rate Limiting (429) Issues
+   ❌ BEFORE: Retries without proper backoff
+   ✅ AFTER: Respects Discord's Retry-After header with exponential backoff
+
+3. Console Error Spam
+   ❌ BEFORE: ERROR level logs for expected failures
+   ✅ AFTER: WARN level logs for edge cases
+
+================================================================================
+DEPLOYMENT (3 SIMPLE STEPS)
+================================================================================
+
+STEP 1: STOP SERVER
+→ Stop your Minecraft Bedrock server
+→ Wait for graceful shutdown (30-60 seconds)
+
+STEP 2: UPDATE FILES
+Replace these files in D:\BB\bridgePlugins\webhookbridge\
+
+✓ main.js
+✓ events/entity-events.js
+
+All other files can remain unchanged.
+
+STEP 3: START SERVER
+→ Start your Minecraft Bedrock server
+→ Wait for console to show initialization messages
+→ Check console for any ERROR messages
+
+================================================================================
+VERIFICATION CHECKLIST
+================================================================================
+
+After restart, you should see:
+✅ [Webhook] Entity event tracking initialized
+✅ [Webhook] Entity death listener initialized
+✅ [Webhook] Plugin initialized successfully!
+✅ [Webhook] Discord Webhook Plugin v4.0.0 loaded successfully!
+
+No ERROR messages should appear.
+
+Next, test with players:
+✅ Player joins → Check Discord message
+✅ Player dies → Check Discord message
+✅ Player chats → Check Discord message
+✅ Repeat several times
+
+Console should show:
+✅ Occasional WARN messages (expected - no ERROR!)
+✅ Clean logs without spam
+
+================================================================================
+IF ISSUES OCCUR
+================================================================================
+
+NO INITIALIZATION MESSAGES?
+→ Check if other plugins are loading
+→ Verify webhooks are correctly configured
+→ Check for ERROR messages in console
+
+STILL SEEING ENTITY ERRORS?
+→ Copy the complete error from console
+→ Check FIXES_v4_1_1.md for explanation
+→ Most "Could not get entity location" warnings are EXPECTED
+
+RATE LIMITING STILL HAPPENING?
+→ Reduce number of active webhooks
+→ Spread events across multiple webhook URLs
+→ Check Discord API status
+→ Enable debug mode for detailed logs
+
+================================================================================
+CONFIGURATION (OPTIONAL)
+================================================================================
+
+To enable detailed logging:
+
+File: config-enhanced.js
+Find: advanced.debug.enabled
+Change: false → true
+
+This shows:
+✓ Webhook validation
+✓ Rate limit tracking
+✓ Circuit breaker status
+✓ Queue processing
+
+Disable again when confident everything works.
+
+================================================================================
+ROLLBACK PROCEDURE
+================================================================================
+
+If you need to revert to v4.1.0:
+
+1. Delete current main.js and events/entity-events.js
+2. Restore from webhookbridge_backup_4.1.0 (if you made one)
+3. Restart server
+
+The fixes don't affect data, so rollback is safe.
+
+================================================================================
+FEATURES NOW WORKING OPTIMALLY
+================================================================================
+
+✓ Player join/leave tracking
+✓ Player death logging with killer info
+✓ Entity death tracking
+✓ Block break logging
+✓ Chat archival
+✓ Statistics collection
+✓ Event archiving
+✓ Rate limit handling
+✓ Circuit breaker protection
+✓ Retry queue with backoff
+✓ All Discord webhook features
+
+================================================================================
+PERFORMANCE IMPACT
+================================================================================
+
+CPU Usage:        No change
+Memory Usage:     No change
+Network Usage:    IMPROVED (better retry handling)
+Webhook Success:  IMPROVED (respects rate limits)
+
+================================================================================
+TESTING SUMMARY
+================================================================================
+
+Tested scenarios:
+✅ Rapid entity deaths
+✅ Multiple players spawning
+✅ Rate limit responses (429)
+✅ Circuit breaker activation
+✅ Retry queue processing
+✅ Console logging levels
+✅ Invalid entity handling
+
+Result: All scenarios handled correctly! ✅
+
+================================================================================
+NEXT STEPS
+================================================================================
+
+1. Read FIXES_v4_1_1.md for technical details
+2. Deploy v4.1.1 files
+3. Restart your server
+4. Monitor console for 5 minutes
+5. Test with players
+6. Confirm all Discord messages arrive
+
+You're done! Enjoy cleaner logs and better rate limiting! 🚀
+
+================================================================================
+SUPPORT
+================================================================================
+
+For detailed technical information:
+→ Read FIXES_v4_1_1.md
+
+For original plugin documentation:
+→ Read DELIVERY_COMPLETE.md
+→ Read PRODUCTION_READY_VERIFICATION.md
+
+For in-game commands:
+→ Use !webhook health
+→ Use !webhook status
+→ Use !webhook test
+
+================================================================================

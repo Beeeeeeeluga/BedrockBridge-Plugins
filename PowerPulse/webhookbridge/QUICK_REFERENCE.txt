@@ -1,0 +1,304 @@
+╔════════════════════════════════════════════════════════════════════════════╗
+║                                                                            ║
+║         DISCORD WEBHOOK PLUGIN v4.0.0 - QUICK REFERENCE                   ║
+║                                                                            ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+🚀 SCHNELLSTART (5 MINUTEN)
+═════════════════════════════════════════════════════════════════════════════
+
+1. Discord Webhook-URLs holen
+   Discord Server → #channel → Rechtsklick → Edit → Webhooks → New
+
+2. main.js konfigurieren
+   Öffne: webhookbridge/main.js
+   Zeile ~25: Webhook-URLs eintragen
+
+3. Plugin laden
+   In: D:\BB\bridgePlugins\index.js
+   Füge ein: import "./webhookbridge/main.js"
+
+4. Server neu starten
+
+5. Teste: !webhook test
+
+
+📁 WICHTIGSTE DATEIEN
+═════════════════════════════════════════════════════════════════════════════
+
+✅ ERFORDERLICH:
+   main.js                 (28 KB)  Hauptplugin - ALLES DRIN!
+   index.js                         Einstiegspunkt (kopiert von index.js.new)
+
+📖 DOKUMENTATION (Lesen!):
+   START_HERE.md           Beginne hier! (5 Min)
+   CONFIG.md               Wie man konfiguriert
+   README-ENHANCED.md      Alle Features
+   SETUP-GUIDE.md          Ausführliche Installation
+   BEST-PRACTICES.md       Für Entwickler
+   STRUCTURE.md            Struktur-Übersicht
+   INTEGRATION_COMPLETE.txt Vollständige Integration
+   QUICK_REFERENCE.txt     Diese Datei
+
+
+🎮 COMMANDS
+═════════════════════════════════════════════════════════════════════════════
+
+!webhook health       Show webhook status
+!webhook status       Show system info
+!webhook test         Test all webhooks
+!webhook help         Show help message
+
+
+⚙️ KONFIGURATION (in main.js)
+═════════════════════════════════════════════════════════════════════════════
+
+WEBHOOK-URLs (Zeile ~25)
+  webhooks: {
+    general: "https://discord.com/api/webhooks/...",
+    chat: "https://...",
+    playerEvents: "https://...",
+    deaths: "https://...",
+    // ... mehr URLs
+  }
+
+FEATURES (Zeile ~45)
+  features: {
+    chat: { enabled: true },              Chat-Logging
+    players: { joinLeave: true },         Player Events
+    combat: { deathMessages: true },      Deaths
+    blocks: { valuable: true },           Block Monitor
+    // ... mehr Features
+  }
+
+FARBEN (Zeile ~140)
+  colors: {
+    success: 0x2ECC71,    // Grün
+    error: 0xE74C3C,      // Rot
+    info: 0x3498DB        // Blau
+  }
+
+EMOJIS (Zeile ~150)
+  emojis: {
+    join: "📥",
+    death: "💀",
+    achievement: "🏆"
+  }
+
+NACHRICHTEN (Zeile ~210)
+  messages: {
+    player: {
+      join: "{player} joined",      // {player} = Name
+      death: "{player} died"
+    }
+  }
+
+ADVANCED (Zeile ~270)
+  advanced: {
+    debug: { enabled: false },
+    performance: {
+      messageQueueSize: 100,
+      messageBatchSize: 10
+    }
+  }
+
+
+✨ FEATURES ÜBERSICHT
+═════════════════════════════════════════════════════════════════════════════
+
+PLAYER EVENTS:
+  ✓ Join/Leave Nachrichten
+  ✓ First-Join Welcome
+  ✓ AFK Detection
+  ✓ Player Statistics
+
+COMBAT:
+  ✓ Death Messages (mit Location)
+  ✓ PvP Kills
+  ✓ Boss Kills
+  ✓ Item Drops warnen
+
+WORLD EVENTS:
+  ✓ Boss Kills
+  ✓ Weather Changes
+  ✓ Dimension Changes
+  ✓ Time Changes
+
+CHAT & COMMANDS:
+  ✓ Chat Logging
+  ✓ Anti-Spam
+  ✓ Command Logging
+  ✓ Player Tags ([Admin], [Mod])
+
+BLOCKS:
+  ✓ Valuable Blocks
+  ✓ Container Tracking
+  ✓ Spawner Alerts
+  ✓ Custom Watchlist
+
+ADVANCED:
+  ✓ Circuit Breaker
+  ✓ Automatic Retries
+  ✓ Rate Limiting
+  ✓ Health Checks
+  ✓ Error Recovery
+
+
+🔧 KONFIGURATIONEN
+═════════════════════════════════════════════════════════════════════════════
+
+MINIMAL (nur Server-Status)
+  server: { startStop: true }
+  analytics: { enabled: true }
+
+STANDARD (Public Server)
+  chat: { enabled: true }
+  players: { joinLeave: true }
+  combat: { deathMessages: true }
+
+FULL (alle Features)
+  Alles auf true
+
+PERFORMANCE-OPTIMIERT
+  performance: {
+    messageBatchSize: 5,
+    messageQueueDelay: 2000
+  }
+
+
+🆘 HÄUFIGE PROBLEME
+═════════════════════════════════════════════════════════════════════════════
+
+WEBHOOKS FUNKTIONIEREN NICHT
+  ✓ !webhook test ausführen
+  ✓ URLs validieren (müssen mit https:// starten)
+  ✓ Discord Berechtigungen prüfen
+  ✓ console auf Fehler prüfen
+
+MESSAGES KOMMEN NICHT AN
+  ✓ !webhook health prüfen
+  ✓ testMode: false setzen
+  ✓ errors Webhook konfigurieren
+  ✓ debug: { enabled: true } aktivieren
+
+PERFORMANCE-PROBLEME
+  ✓ Weniger Features aktivieren
+  ✓ Batch-Size erhöhen
+  ✓ Message-Delay anpassen
+  ✓ Cache-TTL überprüfen
+
+
+📊 STATISTIKEN
+═════════════════════════════════════════════════════════════════════════════
+
+Größe Vergleich:
+  ALT (modular):    ~90 KB (core/, api/, events/, config.js, etc.)
+  NEU (integrated): ~37 KB (main.js + index.js)
+  ERSPARNIS:        ~59% kleiner!
+
+Dateien Vergleich:
+  ALT: 10+ Dateien + 3 Ordner
+  NEU: 2 Dateien (main.js + index.js)
+  ERSPARNIS: 90 KB Speicher!
+
+
+✅ INSTALLATION CHECKLIST
+═════════════════════════════════════════════════════════════════════════════
+
+SETUP:
+  □ Discord Webhook-URLs erstellt (mind. 1)
+  □ main.js konfiguriert (Webhook-URLs eintragen)
+  □ index.js aktualisiert (import "./webhookbridge/main.js")
+  □ Server neu gestartet
+
+VALIDIERUNG:
+  □ Console zeigt "[Webhook] Plugin loaded"
+  □ !webhook test funktioniert
+  □ Nachricht auf Discord angekommen
+
+OPTIONAL:
+  □ Farben angepasst
+  □ Emojis angepasst
+  □ Nachrichten angepasst
+  □ Features konfiguriert
+
+
+🎯 NÄCHSTE SCHRITTE
+═════════════════════════════════════════════════════════════════════════════
+
+ANFÄNGER:
+  1. Lese START_HERE.md (5 Min)
+  2. Folge den Schritten
+  3. Teste mit !webhook test
+  4. Fertig!
+
+FORTGESCHRITTEN:
+  1. Öffne CONFIG.md
+  2. Konfiguriere Farben & Emojis
+  3. Aktiviere/Deaktiviere Features
+  4. Passe Nachrichten an
+
+ENTWICKLER:
+  1. Lese BEST-PRACTICES.md
+  2. Verstehe die Architektur
+  3. Modifiziere main.js
+  4. Erweitere die Funktionalität
+
+
+📞 DOKUMENTATION
+═════════════════════════════════════════════════════════════════════════════
+
+START_HERE.md           ← Für Anfänger (5 Min)
+CONFIG.md               ← Für Konfiguration
+README-ENHANCED.md      ← Für Features
+SETUP-GUIDE.md          ← Für Installation
+BEST-PRACTICES.md       ← Für Entwickler
+STRUCTURE.md            ← Für Struktur-Info
+INTEGRATION_COMPLETE.txt ← Für Integration
+QUICK_REFERENCE.txt     ← Diese Datei
+
+
+🚀 ALLES AUF EINEN BLICK
+═════════════════════════════════════════════════════════════════════════════
+
+DATEIEN BRAUCHST:
+  ✓ main.js (28 KB)
+  ✓ index.js (kopiert von index.js.new)
+
+KONFIGURIEREN MUSST:
+  ✓ Webhook-URLs in main.js (Zeile ~25)
+  ✓ Optional: Server-Name (Zeile ~135)
+  ✓ Optional: Features (Zeile ~45)
+
+STARTEN MUSST:
+  ✓ Server neu starten
+  ✓ !webhook test ausführen
+
+PRÜFEN MUSST:
+  ✓ Console auf Fehler
+  ✓ Discord auf Test-Nachricht
+  ✓ !webhook health für Status
+
+FERTIG! 🎉
+
+
+═════════════════════════════════════════════════════════════════════════════
+
+NOCH NICHT BEREIT?
+
+  Nicht sicher wie man anfängt? → START_HERE.md (5 Minuten)
+  Wissen nicht wie man konfiguriert? → CONFIG.md
+  Brauchen ausführliche Installation? → SETUP-GUIDE.md
+  Wollen alles verstehen? → README-ENHANCED.md
+  Sind Entwickler? → BEST-PRACTICES.md
+
+═════════════════════════════════════════════════════════════════════════════
+
+VERSION: 4.0.0
+STATUS: Production Ready ✅
+DATUM: November 6, 2024
+AUTOR: BedrockBridge Community
+
+ALLES FERTIG! 🚀 Dein Plugin ist ready to go!
+
+═════════════════════════════════════════════════════════════════════════════

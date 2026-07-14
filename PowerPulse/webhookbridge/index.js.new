@@ -1,0 +1,47 @@
+/**
+ * ============================================
+ * DISCORD WEBHOOK PLUGIN v4.0.0 - INDEX
+ * ============================================
+ *
+ * Zentrale Einstiegsdatei für das Webhook Plugin
+ * Ladet die Konfiguration und initialisiert das Hauptplugin
+ *
+ * @author BedrockBridge Community
+ * @version 4.0.0
+ */
+
+import { system } from "@minecraft/server";
+
+console.info("[Webhook] Loading Discord Webhook Plugin v4.0.0...");
+
+// Importiere das Hauptplugin
+import("./main.js").then(() => {
+  console.info("[Webhook] Main plugin loaded successfully");
+}).catch((error) => {
+  console.error("[Webhook] Failed to load main plugin:", error);
+});
+
+// Export plugin info
+export const PLUGIN_INFO = {
+  name: "Discord Webhook Plugin",
+  version: "4.0.0",
+  author: "BedrockBridge Community",
+  description: "Professional Discord webhook integration for Minecraft Bedrock servers",
+  features: [
+    "Player event logging (join, leave, deaths)",
+    "Chat message integration",
+    "Server event tracking",
+    "Block monitoring",
+    "Analytics and reports",
+    "Circuit breaker and error handling",
+    "Message batching and rate limiting"
+  ],
+  commands: [
+    "!webhook health - Show webhook status",
+    "!webhook status - Show system information",
+    "!webhook test - Test all webhooks",
+    "!webhook help - Show help message"
+  ]
+};
+
+export default PLUGIN_INFO;

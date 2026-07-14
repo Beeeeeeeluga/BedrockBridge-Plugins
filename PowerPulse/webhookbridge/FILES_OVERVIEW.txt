@@ -1,0 +1,284 @@
+╔════════════════════════════════════════════════════════════════════════════╗
+║                        DISCORD WEBHOOK PLUGIN v4.0.0                       ║
+║                          FILES OVERVIEW & GUIDE                            ║
+╚════════════════════════════════════════════════════════════════════════════╝
+
+📦 ALLE DATEIEN IM webhookbridge ORDNER
+═════════════════════════════════════════════════════════════════════════════
+
+✅ ERFORDERLICHE DATEIEN
+───────────────────────────────────────────────────────────────────────────
+
+main.js (28 KB)
+└─ ⭐ DAS HAUPTPLUGIN - ALLES DRIN!
+   • Konfiguration (Webhook-URLs, Features, etc.)
+   • WebhookManager (HTTP + Discord)
+   • PlayerTracker (Sessions, AFK, Spam)
+   • Event Handlers (Chat, Player, Combat, World, Blocks)
+   • Command Handlers (!webhook commands)
+   • Initialization Code
+   👉 Du änderst hier: Zeile ~25 (URLs), ~135 (Server-Name), ~45 (Features)
+
+index.js.new (1.4 KB)
+└─ Einstiegsdatei - Kopiere zu index.js und überschreibe die alte
+
+
+📖 DOKUMENTATIONSDATEIEN
+───────────────────────────────────────────────────────────────────────────
+
+START_HERE.md (6.7 KB)
+└─ 👨‍🎓 FÜR ANFÄNGER - BEGINNE HIER!
+   • 5-Minuten Schnelleinstieg
+   • Schritt-für-Schritt Anleitung
+   • Häufige Probleme & Lösungen
+
+CONFIG.md (8.4 KB)
+└─ 🔧 FÜR KONFIGURATION
+   • Webhook-URLs Setup
+   • Feature-Toggles
+   • Farben & Emojis
+   • Nachrichten anpassen
+
+README-ENHANCED.md (12 KB)
+└─ 📖 KOMPLETTE REFERENZ
+   • Alle Features detailliert
+   • API-Dokumentation
+   • Webhook-Payload Beispiele
+   • Troubleshooting
+
+SETUP-GUIDE.md (9.5 KB)
+└─ 🚀 AUSFÜHRLICHE INSTALLATION
+   • Discord Webhooks erstellen
+   • Plugin-Installation
+   • Testing & Validierung
+
+BEST-PRACTICES.md (12 KB)
+└─ 👨‍💻 FÜR ENTWICKLER
+   • Architektur-Übersicht
+   • Design Patterns
+   • Performance & Security
+
+STRUCTURE.md (9 KB)
+└─ 📁 STRUKTUR-ÜBERSICHT
+   • Ordner-Struktur
+   • Migration Guide
+   • Was kann gelöscht werden
+
+INDEX.md (13 KB)
+└─ 📚 DOKUMENTATIONS-INDEX
+   • Übersicht aller Dateien
+   • Quick Links
+   • Use Cases
+
+QUICK_REFERENCE.txt (4.5 KB)
+└─ ⚡ SCHNELLE REFERENZ
+   • 5-Minuten Schnelleinstieg
+   • Alle Commands
+   • Häufige Probleme
+
+INTEGRATION_COMPLETE.txt (14 KB)
+└─ ✅ INTEGRATION SUMMARY
+   • Was ist neu
+   • Migration Guide
+   • Setup-Anleitung
+
+SUMMARY.txt (18 KB)
+└─ 📋 AUSFÜHRLICHE ZUSAMMENFASSUNG
+   • Features-Übersicht
+   • Konfigurationsbeispiele
+   • Use Cases
+
+FILES_OVERVIEW.txt
+└─ Diese Datei - Übersicht aller Dateien
+
+
+❌ VERALTETE DATEIEN (KÖNNEN GELÖSCHT WERDEN)
+───────────────────────────────────────────────────────────────────────────
+
+core/ Ordner
+└─ database.js, events.js, plugin.js, webhook.js
+   ❌ Alle sind in main.js integriert
+
+api/ Ordner
+└─ index.js
+   ❌ Veraltet - alles in main.js
+
+events/ Ordner
+└─ chat.js, handler.js, custom/, player/
+   ❌ Alle Handler sind in main.js
+
+config.js (alt)
+└─ ❌ Veraltet - Konfiguration ist in main.js
+
+config-enhanced.js
+└─ ❌ Superseded by main.js
+
+discord-webhook-enhanced.js
+└─ ❌ Superseded by main.js
+
+utils-enhanced.js
+└─ ❌ Optional - Funktionen sind in main.js
+
+*.tar.gz Archive
+└─ ❌ Nicht nötig - können gelöscht werden
+
+
+📊 SPEICHER-VERGLEICH
+═════════════════════════════════════════════════════════════════════════════
+
+ALT (Modular - verteilt auf viele Dateien):
+  core/database.js        ~4 KB
+  core/events.js          ~8 KB
+  core/plugin.js          ~8 KB
+  core/webhook.js         ~6 KB
+  api/index.js            ~9 KB
+  events/chat.js          ~5 KB
+  config.js              ~50 KB
+  Sonstiges             ~10 KB
+  ─────────────────────────
+  TOTAL:               ~100 KB
+
+NEU (Integriert - alles in einer Datei):
+  main.js                ~28 KB
+  index.js.new           ~1.4 KB
+  ─────────────────────────
+  TOTAL:               ~29.4 KB
+
+ERSPARNIS:
+  • Speicher: ~70 KB gespart (70% kleiner!)
+  • Dateien: Von 10+ zu 2 (80% weniger!)
+  • Komplexität: VIEL einfacher!
+
+
+🎯 EMPFOHLENE STRUKTUR NACH SETUP
+═════════════════════════════════════════════════════════════════════════════
+
+webhookbridge/
+├─ main.js                  (Hauptplugin - ändern!)
+├─ index.js                 (Kopiert von index.js.new)
+│
+├─ START_HERE.md            (👈 Lese das zuerst!)
+├─ CONFIG.md
+├─ README-ENHANCED.md
+├─ QUICK_REFERENCE.txt
+└─ Weitere Docs (optional)
+
+
+📚 WELCHE DATEI LIEST MAN WANN?
+═════════════════════════════════════════════════════════════════════════════
+
+Absoluter Anfänger?
+→ START_HERE.md (5 Minuten!)
+
+Willst du konfigurieren?
+→ CONFIG.md
+
+Brauchst du alle Features?
+→ README-ENHANCED.md
+
+Detaillierte Installation?
+→ SETUP-GUIDE.md
+
+Bist du Developer?
+→ BEST-PRACTICES.md
+
+Brauchst nur Schnellinfo?
+→ QUICK_REFERENCE.txt
+
+Fragst dich wo was ist?
+→ STRUCTURE.md oder FILES_OVERVIEW.txt (diese Datei)
+
+
+🚀 3-SCHRITT SETUP
+═════════════════════════════════════════════════════════════════════════════
+
+1. main.js konfigurieren
+   • Öffne main.js
+   • Zeile ~25: Webhook-URLs eintragen
+   • Speichern
+
+2. index.js aktualisieren
+   • Kopiere index.js.new zu index.js
+   • Überschreibe die alte Datei
+
+3. Server neu starten
+   • Server starten/reloaden
+   • !webhook test im Chat
+   • Prüfe Discord auf Test-Nachricht
+
+FERTIG! 🎉
+
+
+✅ CHECKLISTE
+═════════════════════════════════════════════════════════════════════════════
+
+□ main.js existiert
+□ index.js.new zu index.js kopiert
+□ Webhook-URLs in main.js eingetragen
+□ Server neu gestartet
+□ [Webhook] Plugin loaded in Console
+□ !webhook test funktioniert
+□ Nachricht auf Discord angekommen
+
+ALLE HAKEN? → Du bist fertig! 🚀
+
+
+📋 DATEIGRÖSSEN
+═════════════════════════════════════════════════════════════════════════════
+
+main.js                      28 KB  (Hauptplugin)
+SUMMARY.txt                  18 KB
+INTEGRATION_COMPLETE.txt     14 KB
+README-ENHANCED.md           12 KB
+BEST-PRACTICES.md            12 KB
+INDEX.md                     13 KB
+SETUP-GUIDE.md              9.5 KB
+STRUCTURE.md                 9 KB
+CONFIG.md                   8.4 KB
+START_HERE.md               6.7 KB
+QUICK_REFERENCE.txt         4.5 KB
+FILES_OVERVIEW.txt          ~3 KB  (diese Datei)
+index.js.new               1.4 KB
+────────────────────────────────
+TOTAL Docs:               ~131 KB (aber du brauchst nicht alles!)
+
+
+🎉 ZUSAMMENFASSUNG
+═════════════════════════════════════════════════════════════════════════════
+
+✅ DU BRAUCHST:
+   • main.js
+   • index.js (kopiert von index.js.new)
+
+📖 SOLLTEST LESEN:
+   • START_HERE.md (5 Min)
+   • CONFIG.md (falls änderungen)
+
+❌ KANNST LÖSCHEN:
+   • core/ Ordner
+   • api/ Ordner
+   • events/ Ordner
+   • Alte config*.js Dateien
+   • *.tar.gz Archive
+
+🚀 ALLES IN EINEM PLUGIN:
+   • Keine Abhängigkeiten
+   • Keine Module zu laden
+   • Alles klar & übersichtlich
+   • Production Ready!
+
+
+═════════════════════════════════════════════════════════════════════════════
+
+SCHNELLSTART:
+
+1. START_HERE.md lesen (5 Min)
+2. main.js konfigurieren (2 Min)
+3. index.js aktualisieren (1 Min)
+4. Server neu starten
+5. !webhook test
+6. Fertig! 🎉
+
+═════════════════════════════════════════════════════════════════════════════
+
+Viel Erfolg! 🚀
