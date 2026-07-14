@@ -1,0 +1,30 @@
+{
+  "format_version": 2,
+  "header": {
+    "description": "ClearLag++ - Advanced Lag Elimination & Server Performance Plugin",
+    "name": "ClearLag++",
+    "uuid": "clearlag-plus-plus-001",
+    "version": [1, 0, 0],
+    "min_engine_version": [1, 19, 0]
+  },
+  "modules": [
+    {
+      "description": "Main ClearLag++ Module",
+      "type": "script",
+      "uuid": "clearlag-main-module",
+      "version": [1, 0, 0],
+      "entry": "src/main.js",
+      "language": "javascript"
+    }
+  ],
+  "dependencies": [
+    {
+      "uuid": "@minecraft/server",
+      "version": "1.19.0"
+    },
+    {
+      "uuid": "@minecraft/server-ui",
+      "version": "1.19.0"
+    }
+  ]
+}
