@@ -1,12 +1,19 @@
 /**
- * invclone.js - BedrockBridge Inventory Clone Plugin (Ultra Ultimate Edition, UI v2.0.0)
+ * invclone.js - BedrockBridge Inventory & Ender Chest Clone Plugin 
  *
  * Uses @minecraft/server:
  * - Serializes and deserializes player inventories, equipment, and ender chests
  * - Creates shulker boxes directly via container components to avoid NBT loss
  * - Periodically caches player data for offline retrieval
  * - Registers administrative BedrockBridge commands
+ * 
+ * v1.0.0 by beeeeeeeluga (https://github.com/Beeeeeeeluga)
+ * Discord: beeeeeeeluga (807236027189297212) 
+ * More plugins: https://discord.gg/kB7dWtQZKx
+ *
+ * Addon Support Server: https://discord.com/invite/esploratori-development-1043447184210792468
  */
+
 
 import { world, system, ItemStack, EquipmentSlot, EnchantmentTypes } from "@minecraft/server";
 import { bridge } from "../addons";
