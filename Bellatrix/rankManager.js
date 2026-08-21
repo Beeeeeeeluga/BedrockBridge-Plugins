@@ -128,7 +128,7 @@ bridge.bedrockCommands.registerTagCommand(
         // Get all tags of the target player
         const tags = target.getTags();
 
-        // Find all tags that contain "蠑螈幫"
+        // Find all tags that contain "example"
         const exampleTags = tags.filter(tag => tag.includes("example"));
 
         if (exampleTags.length === 0) {
@@ -190,7 +190,7 @@ bridge.bedrockCommands.registerTagCommand(
         const config = squadMap[squadNum.toString()];
 
         if (!config) {
-            player.sendMessage("§cinvalid number, only fill in 0, 1-6 或 9。");
+            player.sendMessage("§cinvalid number, only fill in 0, 1-6 or 9。");
             return;
         }
 
