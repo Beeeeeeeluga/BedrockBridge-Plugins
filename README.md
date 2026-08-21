@@ -8,5 +8,5 @@ This project contains a collection of custom-built bridge plugins designed to en
 > Please make sure you have BedrockBridge successfully installed and configured on your server before using these plugins.
 > I have also uploaded some plugins developed by [PowerPulse](https://github.com/GERDominik165) which can be find in the Discord Server of Esploratori Development. These plugins are located under the /PowerPulse directory.
 
-link to the repo [BedrockBridge-Plugins-list](https://github.com/GERDominik165/bedrockbridge-plugins) by [PowerPulse](https://github.com/GERDominik165)
+[BedrockBridge-Plugins-list](https://github.com/GERDominik165/bedrockbridge-plugins) by [PowerPulse](https://github.com/GERDominik165)
 
