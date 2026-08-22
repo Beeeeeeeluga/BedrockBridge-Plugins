@@ -137,7 +137,7 @@ Navigate to your active world directory (e.g., `worlds/Bedrock level/`) and crea
 
 ## Part 3: Creating `musicsetting.js`
 
-Create your spatial coordinate configuration file inside your behavior pack script directory:
+Create your spatial coordinate configuration file inside your bridge plugin /citymusic script directory:
 
 ```javascript
 export const MUSIC_ZONES = [
@@ -173,3 +173,23 @@ export const MUSIC_ZONES = [
 
 
 *(Note: the duration of the music is the total seconds of length of your music. e.g. your music is 1:52 long, duration would be 60+52 = 112)*
+
+
+## Part 4: Load the plugin in game
+
+Check your plugin files are correct as the following structure:
+
+```text
+bridgePlugins/
+├── TPS.js
+├── ...Other plugins
+└── citymusic/
+       ├── citymusic.js
+       └── musicsetting.js
+
+```
+
+In your game, open the plugin menu
+press `add new plugin` and fill in `./bridgePlugins/citymusic/citymusic.js`
+
+Restart or reload your server
