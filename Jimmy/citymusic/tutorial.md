@@ -167,6 +167,9 @@ export const MUSIC_ZONES = [
     }
 ];
 
-*(Note: the duration of the music is the total seconds of length of your music. e.g. your music is 1:52 long, duration would be 60+52 = 112)*
+
 
 ```
+
+
+*(Note: the duration of the music is the total seconds of length of your music. e.g. your music is 1:52 long, duration would be 60+52 = 112)*
