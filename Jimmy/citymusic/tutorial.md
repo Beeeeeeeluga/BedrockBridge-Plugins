@@ -72,7 +72,7 @@ Create `sound_definitions.json` in the root of `CityMusicRP`. Use `"stream": tru
   "format_version": "1.14.0",
   "sound_definitions": {
     "custom.music.music1": {
-      "category": "ui",
+      "category": "music",
       "sounds": [
         {
           "name": "sounds/ui/toast/music1",
@@ -81,7 +81,7 @@ Create `sound_definitions.json` in the root of `CityMusicRP`. Use `"stream": tru
       ]
     },
     "custom.music.music2": {
-      "category": "ui",
+      "category": "music",
       "sounds": [
         {
           "name": "sounds/ui/toast/music2",
@@ -90,7 +90,7 @@ Create `sound_definitions.json` in the root of `CityMusicRP`. Use `"stream": tru
       ]
     },
     "custom.music.music3": {
-      "category": "ui",
+      "category": "music",
       "sounds": [
         {
           "name": "sounds/ui/toast/music3",
