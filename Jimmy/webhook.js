@@ -1,3 +1,28 @@
+/**
+ * webhook.js - BedrockBridge Discord Webhook Smart Routing Plugin
+ *
+ * Uses @minecraft/server and @minecraft/server-net:
+ * - Intercepts BedrockBridge embed and message outputs
+ * - Routes messages to specific Discord webhooks based on configured keywords
+ * - Matches keywords from webhook tags, titles, authors, and message content
+ * - Preserves the original BedrockBridge webhook behavior for unmatched messages
+ * - Supports custom Discord usernames and avatars for routed messages
+ *
+ * Disclaimer:
+ * This plugin is not an official release or product of the original BedrockBridge addon developer.
+ * It is independently developed using the Bridge API provided by the original addon.
+ * The author is not affiliated with, endorsed by, or responsible for the original addon.
+ * The author assumes no responsibility for any damage, data loss, service interruption,
+ * misconfiguration, or other issues resulting from the use of this plugin.
+ *
+ * v1.0.0 by beeeeeeeluga (https://github.com/Beeeeeeeluga)
+ * Discord: beeeeeeeluga (807236027189297212)
+ * Contact me: https://beeeeeeeluga.github.io/
+ * More plugins: https://discord.gg/kB7dWtQZKx
+ *
+ * Addon Support Server: https://discord.com/invite/esploratori-development-1043447184210792468
+ */
+
 import { system } from "@minecraft/server";
 import { http, HttpHeader, HttpRequest, HttpRequestMethod } from "@minecraft/server-net";
 import { bridgeDirect } from "../addons";
